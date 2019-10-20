@@ -6,27 +6,34 @@ namespace ConsoleAppLab1
     {
         static void Main(string[] args)
         {
-            //var array = new Figure[5];
-            //array[0] = new Pr();
-            //array[1] = new Tr();
-            //array[2] = new Rmb();
 
-            //foreach (Figure fig in array)
-            //{
-            //    Console.WriteLine(fig.Print());
-            //    Console.WriteLine(fig.PrintName());
-            //    Console.WriteLine("");
-            //}
+            var array = new Figure[5];
+            array[0] = new Pr();
+            array[1] = new Tr();
+            array[2] = new Rmb();
+            array[3] = new Prll();
+            array[4] = new MnUg();
 
-            var list = new MyList();
-            list.Add(50);
-            list.Add(65);
-            list.Add(45);
-            list.Add(33);
-
-
+            Console.WriteLine("Blue = 9 | Green = 10 | Cyan = 11\n" +
+                "Red = 12 | Magenta = 13 | Yellow = 14\n" +
+                "         DEFAULT = White\n" +
+                "ВЫБЕРИТЕ ЦВЕТА ДЛЯ ПРЕДЛОЖЕННЫХ ФИГУР");
+            foreach (Figure fig in array)//для МЕНЮ
+            {
+                Console.ResetColor();
+                Console.WriteLine(fig.PrintName() + " = ");
+                fig.ColorNumber = fig.ChoiceColor();
+                Console.ResetColor();
+            }
+            Console.Clear();
+            foreach (Figure fig in array)//для вывода результата
+            {
+                fig.ColorForPrint(fig.ColorNumber);
+                Console.WriteLine(fig.PrintName());
+                Console.WriteLine(fig.Print());
+                Console.WriteLine("");
+            }
+            Console.ResetColor();
         }
-
-
     }
 }

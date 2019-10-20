@@ -4,12 +4,16 @@ using System.Text;
 
 namespace ConsoleAppLab1
 {
-    //public class Tr : Figure
-    //{
-    //    public override string Print()
-    //    {
-    //        return
-    //        "   *   \n  * *  \n *   * \n*******\n";
-    //    }
-    //}
+    public class Tr : Figure
+    {
+        public override string Print()
+        {
+            return
+            "   *   \n  * *  \n *   * \n*******\n";
+        }
+        public override string PrintName()
+        {
+            return "Треугольник";
+        }
+    }
 }
